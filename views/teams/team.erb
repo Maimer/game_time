@@ -1,8 +1,29 @@
 <h1> <%= @title %> </h1>
 
 <div class="col1"> Record </div>
-<div class="col2"> Wins: <%= @teamdata[@title][0] %> </div>
-<div class="col3"> Losses: <%= @teamdata[@title][1] %> </div>
+<div class="col2"> Wins: </div><div class="col2"> <%= @teamdata[@title][0] %> </div>
+<div class="col2"> Losses: </div><div class="col2"> <%= @teamdata[@title][1] %> </div>
+<div></div>
+</br>
+<div class="col1"> Schedule </div>
+<div></div>
+</br>
+<div class="col1"> Home Team </div>
+<div class="col2"> Score </div>
+<div class="col1"> Away Team </div>
+<div class="col2"> Score </div>
 <div></div>
 
+<% @data.each do |game| %>
+  <% if game[:home_team] == @title || game[:away_team] == @title %>
+    <div class="col1"> <%= game[:home_team] %> </div>
+    <div class="col2"> <%= game[:home_score] %> </div>
+    <div class="col1"> <%= game[:away_team] %> </div>
+    <div class="col2"> <%= game[:away_score] %> </div>
+    <div></div>
+  <% end %>
 <% end %>
+
+</br></br>
+
+<a href="/leaderboard">Go back to Leaderboard</a>

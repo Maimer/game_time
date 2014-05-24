@@ -2,12 +2,12 @@
 
 <div class="col1"> Team </div>
 <div class="col2"> Wins </div>
-<div class="col3"> Losses </div>
+<div class="col2"> Losses </div>
 <div></div>
 
 <% @teamdata.each do |team, record| %>
 <div class="col1"> <a href="/teams/<%= team %>"> <%= team %> </a></div>
 <div class="col2"> <%= record[0] %> </div>
-<div class="col3"> <%= record[1] %> </div>
+<div class="col2"> <%= record[1] %> </div>
 <div></div>
 <% end %>
