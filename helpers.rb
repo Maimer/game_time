@@ -47,5 +47,3 @@ def team_data(data)
   end
   records
 end
-
-puts team_data(make_data).inspect
